@@ -189,10 +189,9 @@ html.handheld,html.handheld body{min-height:100%;background:#0b1d4b}
 .stories{padding:12px 0 4px;color:#fff}
 .stories h2{margin:0 17px 10px;font-size:17px}
 .stories-rail{display:flex;gap:9px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:17px;padding:0 17px 5px;scrollbar-width:none}
-.story-card{position:relative;flex:0 0 112px;height:142px;overflow:hidden;scroll-snap-align:start;border:1px solid #a8c9ff70;border-radius:18px;background:var(--story-color);color:#fff;text-align:left;padding:10px;display:flex;align-items:flex-end}
-.story-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right}
-.story-card::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 34%,#071b45e8)}
-.story-card strong{position:relative;z-index:1;font-size:12px;line-height:1.2}
+.story-card{display:flex;flex-direction:column;align-items:stretch;flex:0 0 112px;min-width:0;gap:6px;padding:0 0 4px;border:0;background:none;color:#fff;text-align:left;scroll-snap-align:start}
+.story-card img{display:block;width:100%;aspect-ratio:1;object-fit:cover;object-position:right;border:1px solid #a8c9ff70;border-radius:18px;background:var(--story-color)}
+.story-card strong{display:block;padding:0 2px;font-size:11px;line-height:1.25;overflow-wrap:normal}
 .story-dialog{border:0;border-radius:24px;padding:0;width:min(360px,calc(100% - 28px));color:#fff;background:var(--story-color,#172f72);overflow:hidden}
 .story-dialog::backdrop{background:#060d20bb}
 .story-dialog img{width:100%;display:block}
