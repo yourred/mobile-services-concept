@@ -523,4 +523,14 @@ requestAnimationFrame(()=>{storyLooping=true;jumpStory(storyCards[0],'auto');req
 
 /* Prevent browser history restoration from reintroducing a shifted document. */
 try { history.scrollRestoration = 'manual'; } catch (_) {}
+
+/* GitHub Pages compatibility: fall back to repository-root assets when needed. */
+document.addEventListener('error', event => {
+  const image = event.target;
+  if (!(image instanceof HTMLImageElement) || !image.src.includes('/assets/')) return;
+  const file = image.src.split('/assets/').pop();
+  if (!file || image.dataset.rootFallback) return;
+  image.dataset.rootFallback = 'true';
+  image.src = file;
+}, true);
 </script></html>
